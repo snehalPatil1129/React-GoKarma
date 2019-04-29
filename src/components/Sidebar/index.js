@@ -56,11 +56,11 @@ class Sidebar extends Component {
 					style={{ backgroundImage: enableSidebarBackgroundImage ? `url(${selectedSidebarImage})` : 'none' }}
 				>
 					<div className="site-logo">
-						<Link to="/" className="logo-mini">
-							<img src={require('../../assets/img/appLogo.png')} className="mr-15" alt="site logo" width="35" height="35" />
-						</Link>
+						{/* <Link to="/" className="logo-mini">
+							<img src={require('../../assets/img/enterLogo.png')} className="mr-15" alt="site logo" width="35" height="35" />
+						</Link> */}
 						<Link to="/" className="logo-normal">
-							<img src={require('../../assets/img/appLogoText.png')} className="img-fluid" alt="site-logo" width="67" height="17" />
+							<img src={require('../../assets/img/enterLogo.png')} className="img-fluid" alt="site-logo" width="150" height="60" />
 						</Link>
 					</div>
 					<div className={`rct-sidebar-wrap sidebar-overlay-${sidebarActiveFilter}`}>

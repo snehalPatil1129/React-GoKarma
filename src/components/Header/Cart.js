@@ -8,8 +8,6 @@ import Button from 'material-ui/Button';
 import { Badge } from 'reactstrap';
 import IconButton from 'material-ui/IconButton';
 
-import IntlMessages from '../../util/IntlMessages';
-
 const cartData = [
   {
     id: 1,
@@ -41,13 +39,13 @@ const Carts = () => (
   <UncontrolledDropdown nav className="list-inline-item cart-icon">
     <DropdownToggle nav className="p-0">
       <IconButton aria-label="bag">
-        <i className="zmdi zmdi-shopping-cart"></i>
-        <Badge color="success" className="badge-xs badge-top-right">3</Badge>
+        <i className="fa fa-cog"></i>
+        {/* <Badge color="success" className="badge-xs badge-top-right">3</Badge> */}
       </IconButton>
     </DropdownToggle>
     <DropdownMenu right>
       <div className="dropdown-head d-flex justify-content-between">
-        <span><IntlMessages id="components.cart" /></span>
+        <span>Cart</span>
         <span>$245.00</span>
       </div>
       <Scrollbars className="rct-scroll" autoHeight autoHeightMin={100} autoHeightMax={280} autoHide>
@@ -75,10 +73,10 @@ const Carts = () => (
       <div className="dropdown-foot d-flex justify-content-between align-items-center">
         <div>
           <Button variant="raised" color="primary" className="mr-10 mb-10 btn-xs text-white">
-            <IntlMessages id="components.viewCart" />
+            View Cart
           </Button>
           <Button variant="raised" color="secondary" className="mb-10 btn-xs text-white">
-            <IntlMessages id="components.checkout" />
+            Checkout
           </Button>
         </div>
         <span className="fw-normal text-muted fs-14">Total $245.00</span>

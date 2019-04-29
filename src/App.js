@@ -1,6 +1,5 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import MomentUtils from 'material-ui-pickers/utils/moment-utils';
 import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils';
 import MuiPickersUtilsProvider from 'material-ui-pickers/utils/MuiPickersUtilsProvider';
 import { Router, Route, Switch } from 'react-router-dom';
@@ -11,9 +10,6 @@ import App from './container/App';
 
 // css
 import './lib/reactifyCss';
-
-// firebase
-import './firebase';
 
 const MainApp = () => (
     <Provider store={configureStore()}>

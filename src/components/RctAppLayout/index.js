@@ -13,8 +13,6 @@ import classnames from 'classnames';
 import Header from '../Header/Header';
 import SidebarContent from '../Sidebar';
 import Footer from '../Footer/Footer';
-import Tour from '../Tour';
-import ThemeOptions from '../ThemeOptions/ThemeOptions';
 
 // app config
 import AppConfig from '../../constants/AppConfig';
@@ -99,7 +97,6 @@ class MainApp extends Component {
         return (
             <div className="app">
                 <div className="app-main-container">
-                    <Tour />
                     <Sidebar
                         sidebar={<SidebarContent />}
                         open={windowWidth <= 1199 ? navCollapsed : false}

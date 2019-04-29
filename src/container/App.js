@@ -3,34 +3,22 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
 import { MuiThemeProvider } from 'material-ui/styles';
 import { SpringSpinner } from 'react-epic-spinners';
 import { IntlProvider } from 'react-intl';
 import { Redirect, Route } from 'react-router-dom';
-import { NotificationContainer } from 'react-notifications';
 
 // app routes
 import MainApp from '../routes';
-
-import HorizontalLayout from './HorizontalLayout';
 
 // app signin
 import AppSignIn from './SigninFirebase';
 import AppSignUp from './SignupFirebase';
 
 // App locale
-import AppLocale from '../lang';
 
-// themes
-import primaryTheme from './themes/primaryTheme';
-import darkTheme from './themes/darkTheme';
-import secondaryTheme from './themes/secondaryTheme';
-import warningTheme from './themes/warningTheme';
-import dangerTheme from './themes/dangerTheme';
-import infoTheme from './themes/infoTheme';
+
 import successTheme from './themes/successTheme';
-import purpleTheme from './themes/purpleTheme';
 
 // async components
 import {
@@ -39,8 +27,7 @@ import {
   AsyncSessionLockScreenComponent,
   AsyncSessionForgotPasswordComponent,
   AsyncSessionPage404Component,
-  AsyncSessionPage500Component,
-  AsyncTermsConditionComponent
+  AsyncSessionPage500Component
 } from '../components/AsyncComponent/AsyncComponent';
 
 /**
@@ -74,7 +61,7 @@ class App extends Component {
   }
 
   render() {
-    const { locale, darkMode, rtlLayout, activeTheme } = this.props.settings;
+    const { locale, rtlLayout } = this.props.settings;
     if (this.state.loading) {
       return (
         <div className="rct-loader">
@@ -89,8 +76,6 @@ class App extends Component {
         return (<Redirect to={'/app/dashboard'} />);
       }
     }
-    const currentAppLocale = AppLocale[locale.locale];
-
     // theme changes
 
     let theme = successTheme;
@@ -103,10 +88,7 @@ class App extends Component {
     }
     return (
       <MuiThemeProvider theme={theme}>
-        <IntlProvider
-          locale={currentAppLocale.locale}
-          messages={currentAppLocale.messages}
-        >
+        
           <React.Fragment>
             <InitialPath path={`${this.props.match.url}app`} authUser={this.props.user} component={MainApp} />
             <Route path="/signin" component={AppSignIn} />
@@ -117,9 +99,8 @@ class App extends Component {
             <Route path="/session/forgot-password" component={AsyncSessionForgotPasswordComponent} />
             <Route path="/session/404" component={AsyncSessionPage404Component} />
             <Route path="/session/500" component={AsyncSessionPage500Component} />
-            <Route path="/terms-condition" component={AsyncTermsConditionComponent} />
           </React.Fragment>
-        </IntlProvider>
+       
       </MuiThemeProvider>
     );
   }

@@ -7,9 +7,6 @@ import Collapse from 'material-ui/transitions/Collapse';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
-// intl messages
-import IntlMessages from '../../util/IntlMessages';
-
 class NavMenuItem extends Component {
     render() {
         const { menu, onToggleMenu } = this.props;
@@ -21,7 +18,7 @@ class NavMenuItem extends Component {
                             <i className={menu.menu_icon}></i>
                         </ListItemIcon>
                         <span className="menu">
-                            <IntlMessages id={menu.menu_title} />
+                           {menu.menu_title}
                         </span>
                         {menu.open ? <i className="ti-angle-down side-arrow"></i> : <i className="ti-angle-right side-arrow"></i>}
                     </ListItem>
@@ -32,7 +29,7 @@ class NavMenuItem extends Component {
                                     <ListItem button component="li" key={index}>
                                         <NavLink activeClassName="item-active" to={subMenu.path}>
                                             <span className="menu">
-                                                <IntlMessages id={subMenu.menu_title} />
+                                              {subMenu.menu_title}
                                             </span>
                                         </NavLink>
                                     </ListItem>
@@ -50,7 +47,7 @@ class NavMenuItem extends Component {
                         <i className={menu.menu_icon}></i>
                     </ListItemIcon>
                     <span className="menu">
-                        <IntlMessages id={menu.menu_title} />
+                       {menu.menu_title}
                     </span>
                 </NavLink>
             </ListItem>

@@ -8,9 +8,6 @@ import Clientslider from './components/client-slider';
 // page title bar
 import PageTitleBar from '../../components/PageTitleBar/PageTitleBar';
 
-// intl messages
-import IntlMessages from '../../util/IntlMessages';
-
 // rct card box
 import { RctCard } from '../../components/RctCard';
 
@@ -18,7 +15,7 @@ export default class AboutUS extends Component {
   render() {
     return (
       <div className="about-wrapper">
-        <PageTitleBar title={<IntlMessages id="sidebar.aboutUs" />} match={this.props.match} />
+        <PageTitleBar title={aboutUs} match={this.props.match} />
         <div className="about-detail">
           <RctCard>
             <div className="row no-gutters row-eq-height">

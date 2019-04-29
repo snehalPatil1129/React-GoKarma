@@ -15,8 +15,6 @@ import SupportPage from '../Support/Support';
 // redux action
 import { logoutUserFromFirebase } from '../../actions';
 
-// intl messages
-import IntlMessages from '../../util/IntlMessages';
 
 // app config
 import AppConfig from '../../constants/AppConfig';
@@ -99,7 +97,7 @@ class UserBlock extends Component {
                                         state: { activeTab: 0 }
                                     }}>
                                         <i className="ti ti-user"></i>
-                                        <IntlMessages id="widgets.profile" />
+                                        profile
                                     </Link>
                                 </li>
                                 <li>
@@ -108,39 +106,39 @@ class UserBlock extends Component {
                                         state: { activeTab: 2 }
                                     }}>
                                         <i className="ti ti-comment-alt"></i>
-                                        <IntlMessages id="widgets.messages" />
+                                        messages
                                         <Badge color="danger" className="pull-right">3</Badge>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/app/pages/feedback">
                                         <i className="ti ti-pencil"></i>
-                                        <IntlMessages id="sidebar.feedback" />
+                                        feedback
                                         <Badge color="info" className="pull-right">1</Badge>
                                     </Link>
                                 </li>
                                 <li>
                                     <a href="javascript:void(0)" onClick={() => this.openSupportModal()}>
                                         <i className="ti ti-headphone-alt"></i>
-                                        <IntlMessages id="widgets.support" />
+                                        Support
                                     </a>
                                 </li>
                                 <li>
                                     <Link to="/app/pages/faq">
                                         <i className="ti ti-help-alt"></i>
-                                        <IntlMessages id="sidebar.faq(s)" />
+                                        faq(s)
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/app/pages/pricing">
                                         <i className="ti-package"></i>
-                                        <IntlMessages id="widgets.upgradePlains" />
+                                        upgrade Plains
                                     </Link>
                                 </li>
                                 <li className="border-top">
                                     <a href="javascript:void(0)" onClick={() => this.logoutUser()}>
                                         <i className="ti ti-power-off"></i>
-                                        <IntlMessages id="widgets.logOut" />
+                                        logOut
                                     </a>
                                 </li>
                             </ul>

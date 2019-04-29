@@ -2,9 +2,9 @@
  * App Config File
  */
 const AppConfig = {
-    appLogo: require('../assets/img/site-logo.png'),          // App Logo
-    appUrl: 'http://reactify.theironnetwork.org',             // App Url
-    brandName: 'Reactify',                                    // Brand Name
+    appLogo: require('../assets/img/enterLogo.png'),          // App Logo
+    appUrl: 'https://www.eternussolutions.com/',             // App Url
+    brandName: 'Eternus Solutions',                                    // Brand Name
     navCollapsed: false,                                      // Sidebar collapse
     darkMode: false,                                          // Dark Mode
     boxLayout: false,                                         // Box Layout
@@ -20,7 +20,7 @@ const AppConfig = {
         icon: 'en',
     },
     enableUserTour: false,                                      // Enable / Disable User Tour
-    copyRightText: 'Reactify © 2018 All Rights Reserved.',      // Copy Right Text
+    copyRightText: 'Eternus Solutions Pvt Ltd © 2018 All Rights Reserved.',      // Copy Right Text
     // light theme colors
     themeColors: {
         'primary': '#722ED1',
@@ -29,10 +29,8 @@ const AppConfig = {
         'success': '#389E0D',
         'warning': '#FAAD14',
         'danger': '#CF1322',
-
         'default': '#657786',
         'purple': '#6f42c1',
-
         'yellow': '#D46B08',
         'white': '#FFFFFF',
         'dark': '#000000',

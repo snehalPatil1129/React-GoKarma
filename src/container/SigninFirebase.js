@@ -13,7 +13,7 @@ import { LinearProgress } from 'material-ui/Progress';
 import QueueAnim from 'rc-queue-anim';
 
 // components
-import SessionSlider from '../components/Widgets/SessionSlider';
+//import SessionSlider from '../components/Widgets/SessionSlider';
 
 // app config
 import AppConfig from '../constants/AppConfig';
@@ -121,7 +121,7 @@ class Signin extends Component {
                   </div>
                 </div>
                 <div className="col-sm-5 col-md-5 col-lg-4">
-                  <SessionSlider />
+                  {/* <SessionSlider /> */}
                 </div>
               </div>
             </div>

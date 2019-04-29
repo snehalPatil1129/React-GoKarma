@@ -9,8 +9,6 @@ import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 
-import IntlMessages from '../../util/IntlMessages';
-
 import NavMenuItem from './NavMenuItem';
 
 // redux actions
@@ -40,7 +38,7 @@ class SidebarContent extends Component {
                         className="rct-mainMenu p-0 m-0 list-unstyled"
                         subheader={
                             <ListSubheader className="side-title" component="li">
-                                <IntlMessages id="sidebar.general" />
+                                General
                             </ListSubheader>}
                     >
                         {sidebarMenus.category1.map((menu, key) => (
@@ -53,7 +51,7 @@ class SidebarContent extends Component {
                     </List>
                     <List
                         className="rct-mainMenu p-0 m-0 list-unstyled"
-                        subheader={<ListSubheader className="side-title" component="li"><IntlMessages id="sidebar.modules" /></ListSubheader>}
+                        subheader={<ListSubheader className="side-title" component="li">Modules</ListSubheader>}
                     >
                         {sidebarMenus.category2.map((menu, key) => (
                             <NavMenuItem
@@ -65,7 +63,7 @@ class SidebarContent extends Component {
                     </List>
                     <List
                         className="rct-mainMenu p-0 m-0 list-unstyled"
-                        subheader={<ListSubheader className="side-title" component="li"><IntlMessages id="sidebar.component" /></ListSubheader>}
+                        subheader={<ListSubheader className="side-title" component="li">Component</ListSubheader>}
                     >
                         {sidebarMenus.category3.map((menu, key) => (
                             <NavMenuItem
@@ -77,25 +75,13 @@ class SidebarContent extends Component {
                     </List>
                     <List
                         className="rct-mainMenu p-0 m-0 list-unstyled"
-                        subheader={<ListSubheader className="side-title" component="li"><IntlMessages id="sidebar.features" /></ListSubheader>}
+                        subheader={<ListSubheader className="side-title" component="li">Features</ListSubheader>}
                     >
                         {sidebarMenus.category4.map((menu, key) => (
                             <NavMenuItem
                                 menu={menu}
                                 key={key}
                                 onToggleMenu={() => this.toggleMenu(menu, 'category4')}
-                            />
-                        ))}
-                    </List>
-                    <List
-                        className="rct-mainMenu p-0 m-0 list-unstyled"
-                        subheader={<ListSubheader className="side-title" component="li"><IntlMessages id="sidebar.applications" /></ListSubheader>}
-                    >
-                        {sidebarMenus.category5.map((menu, key) => (
-                            <NavMenuItem
-                                menu={menu}
-                                key={key}
-                                onToggleMenu={() => this.toggleMenu(menu, 'category5')}
                             />
                         ))}
                     </List>
