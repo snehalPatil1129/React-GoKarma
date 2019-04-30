@@ -49,7 +49,7 @@ class SidebarContent extends Component {
               />
             ))}
           </List>
-          <List
+          {/* <List
             className="rct-mainMenu p-0 m-0 list-unstyled"
             subheader={
               <ListSubheader className="side-title" component="li">
@@ -140,7 +140,7 @@ class SidebarContent extends Component {
                 </Collapse>
               </List>
             </Collapse>
-          </List>
+          </List> */}
         </nav>
       </div>
     );
