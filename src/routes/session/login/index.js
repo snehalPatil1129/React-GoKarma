@@ -2,21 +2,21 @@
  * Login Page
  */
 
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Button from 'material-ui/Button';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import { Link } from 'react-router-dom';
-import { Form, FormGroup, Input } from 'reactstrap';
-import { LinearProgress } from 'material-ui/Progress';
-import QueueAnim from 'rc-queue-anim';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Button from "material-ui/Button";
+import AppBar from "material-ui/AppBar";
+import Toolbar from "material-ui/Toolbar";
+import { Link } from "react-router-dom";
+import { Form, FormGroup, Input } from "reactstrap";
+import { LinearProgress } from "material-ui/Progress";
+import QueueAnim from "rc-queue-anim";
 
 // components
 //import SessionSlider from '../../../components/Widgets/SessionSlider';
 
 // app config
-import AppConfig from '../../../constants/AppConfig';
+import AppConfig from "../../../constants/AppConfig";
 
 // redux action
 import {
@@ -25,20 +25,19 @@ import {
   signinUserWithGoogle,
   signinUserWithGithub,
   signinUserWithTwitter
-} from '../../../actions';
+} from "../../../store/actions";
 
 class Signin extends Component {
-
   state = {
-    email: 'demo@example.com',
-    password: 'test#123'
-  }
+    email: "demo@example.com",
+    password: "test#123"
+  };
 
   /**
    * On User Login
    */
   onUserLogin() {
-    if (this.state.email !== '' && this.state.password !== '') {
+    if (this.state.email !== "" && this.state.password !== "") {
       this.props.signinUserInFirebase(this.state, this.props.history);
     }
   }
@@ -47,7 +46,7 @@ class Signin extends Component {
    * On User Sign Up
    */
   onUserSignUp() {
-    this.props.history.push('/signup');
+    this.props.history.push("/signup");
   }
 
   render() {
@@ -56,21 +55,34 @@ class Signin extends Component {
     return (
       <QueueAnim type="bottom" duration={2000}>
         <div className="rct-session-wrapper">
-          {loading &&
-            <LinearProgress />
-          }
+          {loading && <LinearProgress />}
           <AppBar position="static" className="session-header">
             <Toolbar>
               <div className="container">
                 <div className="d-flex justify-content-between">
                   <div className="session-logo">
                     <Link to="/">
-                      <img src={AppConfig.appLogo} alt="session-logo" className="img-fluid" width="110" height="35" />
+                      <img
+                        src={AppConfig.appLogo}
+                        alt="session-logo"
+                        className="img-fluid"
+                        width="110"
+                        height="35"
+                      />
                     </Link>
                   </div>
                   <div>
-                    <a className="mr-15" onClick={() => this.onUserSignUp()}>Create New account?</a>
-                    <Button variant="raised" color="primary" className="btn-lg circle-btn-xs" onClick={() => this.onUserSignUp()}>Sign Up</Button>
+                    <a className="mr-15" onClick={() => this.onUserSignUp()}>
+                      Create New account?
+                    </a>
+                    <Button
+                      variant="raised"
+                      color="primary"
+                      className="btn-lg circle-btn-xs"
+                      onClick={() => this.onUserSignUp()}
+                    >
+                      Sign Up
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -87,37 +99,90 @@ class Signin extends Component {
                     </div>
                     <Form>
                       <FormGroup className="has-wrapper">
-                        <Input type="mail" value={email} name="user-mail" id="user-mail" className="has-input input-lg" placeholder="Enter Email Address" onChange={(event) => this.setState({ email: event.target.value })} />
-                        <span className="has-icon"><i className="ti-email"></i></span>
+                        <Input
+                          type="mail"
+                          value={email}
+                          name="user-mail"
+                          id="user-mail"
+                          className="has-input input-lg"
+                          placeholder="Enter Email Address"
+                          onChange={event =>
+                            this.setState({ email: event.target.value })}
+                        />
+                        <span className="has-icon">
+                          <i className="ti-email" />
+                        </span>
                       </FormGroup>
                       <FormGroup className="has-wrapper">
-                        <Input value={password} type="Password" name="user-pwd" id="pwd" className="has-input input-lg" placeholder="Password" onChange={(event) => this.setState({ password: event.target.value })} />
-                        <span className="has-icon"><i className="ti-lock"></i></span>
+                        <Input
+                          value={password}
+                          type="Password"
+                          name="user-pwd"
+                          id="pwd"
+                          className="has-input input-lg"
+                          placeholder="Password"
+                          onChange={event =>
+                            this.setState({ password: event.target.value })}
+                        />
+                        <span className="has-icon">
+                          <i className="ti-lock" />
+                        </span>
                       </FormGroup>
                       <FormGroup className="mb-15">
                         <Button
                           className="btn-success text-white btn-lg circle-btn-sm"
                           variant="raised"
-                          onClick={() => this.onUserLogin()}>
+                          onClick={() => this.onUserLogin()}
+                        >
                           Sign In
-                            </Button>
+                        </Button>
                       </FormGroup>
                     </Form>
                     <p className="mb-20">or sign in with</p>
-                    <Button variant="fab" className="btn-facebook mr-15 mb-20 text-white" onClick={() => this.props.signinUserWithFacebook(this.props.history)}>
-                      <i className="zmdi zmdi-facebook"></i>
+                    <Button
+                      variant="fab"
+                      className="btn-facebook mr-15 mb-20 text-white"
+                      onClick={() =>
+                        this.props.signinUserWithFacebook(this.props.history)}
+                    >
+                      <i className="zmdi zmdi-facebook" />
                     </Button>
-                    <Button variant="fab" className="btn-google mr-15 mb-20 text-white" onClick={() => this.props.signinUserWithGoogle(this.props.history)}>
-                      <i className="zmdi zmdi-google"></i>
+                    <Button
+                      variant="fab"
+                      className="btn-google mr-15 mb-20 text-white"
+                      onClick={() =>
+                        this.props.signinUserWithGoogle(this.props.history)}
+                    >
+                      <i className="zmdi zmdi-google" />
                     </Button>
-                    <Button variant="fab" className="btn-twitter mr-15 mb-20 text-white" onClick={() => this.props.signinUserWithTwitter(this.props.history)}>
-                      <i className="zmdi zmdi-twitter"></i>
+                    <Button
+                      variant="fab"
+                      className="btn-twitter mr-15 mb-20 text-white"
+                      onClick={() =>
+                        this.props.signinUserWithTwitter(this.props.history)}
+                    >
+                      <i className="zmdi zmdi-twitter" />
                     </Button>
-                    <Button variant="fab" className="btn-instagram mr-15 mb-20 text-white" onClick={() => this.props.signinUserWithGithub(this.props.history)}>
-                      <i className="zmdi zmdi-github-alt"></i>
+                    <Button
+                      variant="fab"
+                      className="btn-instagram mr-15 mb-20 text-white"
+                      onClick={() =>
+                        this.props.signinUserWithGithub(this.props.history)}
+                    >
+                      <i className="zmdi zmdi-github-alt" />
                     </Button>
-                    <p className="text-muted">By signing up you agree to {AppConfig.brandName}</p>
-                    <p><a target="_blank" href="#/terms-condition" className="text-muted">Terms of Service</a></p>
+                    <p className="text-muted">
+                      By signing up you agree to {AppConfig.brandName}
+                    </p>
+                    <p>
+                      <a
+                        target="_blank"
+                        href="#/terms-condition"
+                        className="text-muted"
+                      >
+                        Terms of Service
+                      </a>
+                    </p>
                   </div>
                 </div>
                 <div className="col-sm-5 col-md-5 col-lg-4">
@@ -135,8 +200,8 @@ class Signin extends Component {
 // map state to props
 const mapStateToProps = ({ authUser }) => {
   const { user, loading } = authUser;
-  return { user, loading }
-}
+  return { user, loading };
+};
 
 export default connect(mapStateToProps, {
   signinUserInFirebase,

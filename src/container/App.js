@@ -27,7 +27,8 @@ import {
   AsyncSessionLockScreenComponent,
   AsyncSessionForgotPasswordComponent,
   AsyncSessionPage404Component,
-  AsyncSessionPage500Component
+  AsyncSessionPage500Component,
+  AsyncAboutUsComponent
 } from '../components/AsyncComponent/AsyncComponent';
 
 /**
