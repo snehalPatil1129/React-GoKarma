@@ -6,8 +6,15 @@ export default {
       menu_icon: "ti-dashboard",
       path: "/app/dashboard",
       child_routes: null
+    },
+    {
+      menu_title: "My Profile",
+      menu_icon: "ti ti-user",
+      path: "/app/userProfile",
+      child_routes: null
     }
   ]
+
   // category2: [
   //       {
   //             "menu_title": "Inbox",

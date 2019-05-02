@@ -1,9 +1,9 @@
 /*============ Sidebar Layout ===========*/
 .rct-page-wrapper {
-	[direction="right"] {
-		border-right: none;
-		z-index: 999 !important;
-	}
+  [direction="right"] {
+    border-right: none;
+    z-index: 999 !important;
+  }
 }
 .rct-sidebar {
   background-repeat: no-repeat;
@@ -11,14 +11,14 @@
   width: $sidebar-width;
   background-position: bottom center;
   overflow: hidden;
-	transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 100%;
   .site-logo {
-      padding: 0.89rem 1.5rem; //15px 30px;
-      @include border(1px solid, rgba(0,0,0,0.2), bottom);
-      align-items: center;
-      display: flex;
-      background: $success;
+    padding: 10px 25px; //15px 30px;
+    @include border(1px solid, rgba(0,0,0,0.2), bottom);
+    align-items: center;
+    display: flex;
+    background: $success;
   }
   .rct-sidebar-wrap {
     .top-sidebar {
@@ -30,7 +30,7 @@
   .user-profile {
     > img {
       @include border (5px solid, $white, top bottom left right);
-      box-shadow: 0 8px 24px 0 rgba(0,0,0,0.5);
+      box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
     }
   }
   .dropdown {
@@ -39,42 +39,51 @@
       font-size: 1.125rem; //18px;
       &::after {
         margin-left: 0.9375rem; //15px;
-        vertical-align: .1rem;
+        vertical-align: 0.1rem;
       }
     }
   }
   .rct-mainMenu {
-		.side-title  {
-			position: relative;
+    .side-title {
+      position: relative;
       span {
         font-size: 14px;
       }
-		}
-		div, li, li a, li a i, li i {
-			color: $sidebar-link-font-color;
-		}
-		li a.item-active, li a.item-active i, li.item-active, li.item-active i {
-			font-weight: bold;
-		}
-    div, li {
-			i {
-	      margin-right: 0.9375rem;
-	      display: inline-block;
-				line-height: 24px;
-	    }
-			a, span {
-				width: 100%;
-				font-size: $sidebar-link-fontsize;
-			}
-			h3 {
-				color: $sidebar-link-font-color;
-			}
-			.side-arrow {
-				margin-right: -10px;
-			}
+    }
+    div,
+    li,
+    li a,
+    li a i,
+    li i {
+      color: $sidebar-link-font-color;
+    }
+    li a.item-active,
+    li a.item-active i,
+    li.item-active,
+    li.item-active i {
+      font-weight: bold;
+    }
+    div,
+    li {
+      i {
+        margin-right: 0.9375rem;
+        display: inline-block;
+        line-height: 24px;
+      }
+      a,
+      span {
+        width: 100%;
+        font-size: $sidebar-link-fontsize;
+      }
+      h3 {
+        color: $sidebar-link-font-color;
+      }
+      .side-arrow {
+        margin-right: -10px;
+      }
     }
     .sub-menu {
-			padding: 0;
+      padding: 0;
       li {
         padding-left: 3.8rem; //55px;
       }
@@ -102,15 +111,16 @@
 }
 .dropdown-menu {
   padding: 0;
-  transform: translate3d(0, 100px, 0)!important;
-  -webkit-transition: all .4s linear 0ms;
-  -o-transition: all .4s linear 0ms;
-  transition: all .4s linear 0ms;
+  transform: translate3d(0, 100px, 0) !important;
+  -webkit-transition: all 0.4s linear 0ms;
+  -o-transition: all 0.4s linear 0ms;
+  transition: all 0.4s linear 0ms;
   display: block;
   visibility: hidden;
-  left: auto!important;
+  left: auto !important;
   opacity: 0;
-  &::before, &::after {
+  &::before,
+  &::after {
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
     right: 10%;
@@ -137,14 +147,14 @@
   &.show {
     .dropdown-menu {
       opacity: 1;
-      transform: translate3d(0, 45px, 0)!important;
+      transform: translate3d(0, 45px, 0) !important;
       visibility: visible;
     }
   }
   .dropdown-menu {
     @extend .dropdown-menu;
     width: 14rem;
-    right: 0px!important;
+    right: 0px !important;
     ul {
       li {
         a {
@@ -173,7 +183,7 @@
   }
 }
 /*========= Background None =====*/
-.rct-sidebar{
+.rct-sidebar {
   &.background-none {
     background-image: none;
     [class*="sidebar-overlay-"] {
@@ -194,7 +204,8 @@
     .chat-head {
       @include border (1px solid, $border-color, top);
     }
-    .chat-head, .chat-body {
+    .chat-head,
+    .chat-body {
       padding: 0.625rem; //10px;
     }
     .chat-body {
@@ -214,7 +225,7 @@
     .send-icons {
       ul {
         > li {
-          &:nth-last-of-type(-n+2) {
+          &:nth-last-of-type(-n + 2) {
             display: none;
           }
         }
@@ -226,7 +237,7 @@
   }
   .chat-sidebar {
     .badge-xs {
-    padding: 5px;
+      padding: 5px;
     }
     .media-body {
       h5 {

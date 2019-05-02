@@ -26,10 +26,8 @@ const INIT_STATE = {
   navCollapsed: AppConfig.navCollapsed,
   rtlLayout: AppConfig.rtlLayout,
   miniSidebar: AppConfig.miniSidebar,
-  activeTheme: {
-    id: 1,
-    name: "primary"
-  },
+  darkMode: AppConfig.darkMode,
+
   // sidebar background image
   sidebarBackgroundImages: [
     require("../../assets/img/sidebar-1.jpg"),

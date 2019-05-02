@@ -7,7 +7,7 @@ import { MuiThemeProvider } from 'material-ui/styles';
 import { SpringSpinner } from 'react-epic-spinners';
 import { IntlProvider } from 'react-intl';
 import { Redirect, Route } from 'react-router-dom';
-
+import $ from 'jquery';
 // app routes
 import MainApp from '../routes';
 
@@ -19,6 +19,7 @@ import AppSignUp from './SignupFirebase';
 
 
 import successTheme from './themes/successTheme';
+import darkTheme from './themes/darkTheme';
 
 // async components
 import {
@@ -62,6 +63,7 @@ class App extends Component {
   }
 
   render() {
+    $('body').addClass('dark-mode');
     const { locale, rtlLayout } = this.props.settings;
     if (this.state.loading) {
       return (
@@ -79,7 +81,7 @@ class App extends Component {
     }
     // theme changes
 
-    let theme = successTheme;
+    let theme = darkTheme;
     
 
     if (rtlLayout) {

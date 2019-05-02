@@ -4,14 +4,16 @@ import { connect } from "react-redux";
 import { Scrollbars } from "react-custom-scrollbars";
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 import Button from "material-ui/Button";
+import { Link } from "react-router-dom";
 import { Badge } from "reactstrap";
 import IconButton from "material-ui/IconButton";
 import { logoutUserFromFirebase } from "../../store/actions";
 
-class Carts extends Component {
+class Settings extends Component {
   onLogout = () => {
     this.props.logoutUserFromFirebase();
   };
+
   render() {
     return (
       <UncontrolledDropdown nav className="list-inline-item cart-icon">
@@ -33,24 +35,18 @@ class Carts extends Component {
             autoHide
           >
             <ul className="list-unstyled dropdown-body">
-              {/* {cartData.map((cart, key) => (
-                <li className="d-flex justify-content-between" key={key}>
-                  <div className="media">
-                    <div className="mr-15">
-                      <img src={cart.productImage} alt="products" className="media-object" width="63" height="63" />
-                    </div>
-                    <div className="media-body">
-                      <span className="fs-14 d-block">{cart.productName}</span>
-                      <span className="fs-12 d-block text-muted">{cart.poductFeature}</span>
-                      <span className="fs-12 d-block text-muted">{cart.productColor}</span>
-                    </div>
-                  </div>
-                  <div>
-                    <span className="text-muted fs-12 d-block mb-10">{cart.price}</span>
-                    <a href="javascript:void(0);" className="hover-close"><i className="ti-close"></i></a>
-                  </div>
-                </li>
-              ))} */}
+              <li className="d-flex justify-content-between">
+                <Link
+                  to={{
+                    pathname: "/app/userProfile",
+                    state: { activeTab: 0 }
+                  }}
+                >
+                  <span />
+                  <i className="ti ti-user" style={{ marginRight: 20 }} />
+                  My Profile
+                </Link>
+              </li>
             </ul>
           </Scrollbars>
           <div className="dropdown-foot d-flex justify-content-between align-items-center">
@@ -77,4 +73,4 @@ const mapStateToProps = ({ settings }) => {
 };
 export default connect(mapStateToProps, {
   logoutUserFromFirebase
-})(Carts);
+})(Settings);

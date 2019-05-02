@@ -11,7 +11,8 @@ import RctAppLayout from "../components/RctAppLayout";
 // async component
 import {
   AsyncDashboardComponent,
-  AsyncAboutUsComponent
+  AsyncAboutUsComponent,
+  AsyncUserProfileComponent
 } from "../components/AsyncComponent/AsyncComponent";
 
 class MainApp extends Component {
@@ -26,6 +27,10 @@ class MainApp extends Component {
         <Route
           path={`${match.url}/about-us`}
           component={AsyncAboutUsComponent}
+        />
+        <Route
+          path={`${match.url}/userProfile`}
+          component={AsyncUserProfileComponent}
         />
       </RctAppLayout>
     );

@@ -20,6 +20,12 @@ const AsyncAboutUsComponent = Loadable({
   loading: () => <RctPageLoader />
 });
 
+/** ----------USER Profile ---------- */
+
+const AsyncUserProfileComponent = Loadable({
+  loader: () => import("../../routes/userProfile"),
+  loading: () => <RctPageLoader />
+});
 /*---------------- Session ------------------*/
 
 // Session Login
@@ -66,5 +72,6 @@ export {
   AsyncSessionLockScreenComponent,
   AsyncSessionForgotPasswordComponent,
   AsyncSessionPage404Component,
-  AsyncSessionPage500Component
+  AsyncSessionPage500Component,
+  AsyncUserProfileComponent
 };

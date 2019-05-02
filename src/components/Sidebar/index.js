@@ -77,8 +77,8 @@ class Sidebar extends Component {
                 src={require("../../assets/img/enterLogo.png")}
                 className="img-fluid"
                 alt="site-logo"
-                width="150"
-                height="60"
+                width="165"
+                height="100"
               />
             </Link>
           </div>

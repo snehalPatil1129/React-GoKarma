@@ -15,7 +15,7 @@ import $ from "jquery";
 // actions
 import { collapsedSidebarAction } from "../../store/actions";
 
-import Cart from "./Cart";
+import Settings from "./Settings";
 
 class Header extends Component {
   state = {
@@ -63,7 +63,7 @@ class Header extends Component {
             )}
           </ul>
           <ul className="navbar-right list-inline">
-            <Cart />
+            <Settings />
           </ul>
         </Toolbar>
       </AppBar>
