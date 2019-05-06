@@ -174,7 +174,7 @@ export default class Profile extends Component {
         <Button
           variant="raised"
           color="primary"
-          className="text-white"
+          className="text-white primaryButton"
           onClick={() => this.onUpdateProfile()}
         >
           updateProfile

@@ -9,7 +9,7 @@ import { Badge } from "reactstrap";
 import IconButton from "material-ui/IconButton";
 import { logoutUserFromFirebase } from "../../store/actions";
 
-class Settings extends Component {
+class User extends Component {
   onLogout = () => {
     this.props.logoutUserFromFirebase();
   };
@@ -18,14 +18,18 @@ class Settings extends Component {
     return (
       <UncontrolledDropdown nav className="list-inline-item cart-icon">
         <DropdownToggle nav className="p-0">
-          <IconButton aria-label="bag">
-            <i className="fa fa-cog" />
-          </IconButton>
+          <span className="mr-10">
+            <img
+              src={require("../../assets/img/user-1.jpg")}
+              alt="user profile"
+              className="img-fluid rounded-circle"
+              width="40"
+              height="40"
+            />
+          </span>
+          Snehal Patil
         </DropdownToggle>
         <DropdownMenu right>
-          {/* <div className="dropdown-head d-flex justify-content-between">
-            <span>Settings</span>
-          </div> */}
           <Scrollbars
             className="rct-scroll"
             autoHeight
@@ -33,53 +37,8 @@ class Settings extends Component {
             autoHeightMax={280}
             autoHide
           >
-            {/* <ul className="list-unstyled dropdown-body">
-              <li className="d-flex justify-content-between">
-                <Link
-                  to={{
-                    pathname: "/app/userProfile",
-                    state: { activeTab: 0 }
-                  }}
-                >
-                  <span />
-                  <i className="ti ti-user" style={{ marginRight: 20 }} />
-                  My Profile
-                </Link>
-              </li>
-            </ul> */}
             <div style={{ padding: 10 }}>
-              <p>Manage social accounts</p>
-              <ul className="list-unstyled mb-0">
-                <li style={{ padding: 5, display: "block" }}>
-                  <Link
-                    to={{
-                      pathname: "/app/userProfile",
-                      state: { activeTab: 0 }
-                    }}
-                  >
-                    <i
-                      className="ti-twitter-alt"
-                      style={{ marginLeft: 15, marginRight: 10 }}
-                    />
-                    Twitter
-                  </Link>
-                </li>
-                <li style={{ padding: 5, display: "block" }}>
-                  <Link
-                    to={{
-                      pathname: "/app/userProfile",
-                      state: { activeTab: 0 }
-                    }}
-                  >
-                    <i
-                      className="ti-facebook"
-                      style={{ marginLeft: 15, marginRight: 10 }}
-                    />
-                    Facebook
-                  </Link>
-                </li>
-              </ul>
-              {/* <p>Settings </p>
+              <p>Manage my account</p>
               <ul className="list-unstyled mb-0">
                 <li style={{ padding: 5, display: "block" }}>
                   <Link
@@ -95,10 +54,24 @@ class Settings extends Component {
                     My Profile
                   </Link>
                 </li>
-              </ul> */}
+                {/* <li style={{ padding: 5, display: "block" }}>
+                  <Link
+                    to={{
+                      pathname: "/app/userProfile",
+                      state: { activeTab: 0 }
+                    }}
+                  >
+                    <i
+                      className="ti ti-user"
+                      style={{ marginLeft: 15, marginRight: 10 }}
+                    />
+                    My Profile
+                  </Link>
+                </li> */}
+              </ul>
             </div>
           </Scrollbars>
-          {/* <div className="dropdown-foot d-flex justify-content-between align-items-center">
+          <div className="dropdown-foot d-flex justify-content-between align-items-center">
             <div>
               <Button
                 variant="raised"
@@ -108,7 +81,7 @@ class Settings extends Component {
                 Logout
               </Button>
             </div>
-          </div> */}
+          </div>
         </DropdownMenu>
       </UncontrolledDropdown>
     );
@@ -121,4 +94,4 @@ const mapStateToProps = ({ settings }) => {
 };
 export default connect(mapStateToProps, {
   logoutUserFromFirebase
-})(Settings);
+})(User);

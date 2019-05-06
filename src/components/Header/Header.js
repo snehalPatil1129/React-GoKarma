@@ -11,12 +11,19 @@ import { Link } from "react-router-dom";
 import screenfull from "screenfull";
 import MenuIcon from "material-ui-icons/Menu";
 import $ from "jquery";
-
+import {
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Dropdown
+} from "reactstrap";
 // actions
 import { collapsedSidebarAction } from "../../store/actions";
 
 import Settings from "./Settings";
-
+import Search from "./Search";
+import User from "./User";
 class Header extends Component {
   state = {
     customizer: false,
@@ -34,36 +41,24 @@ class Header extends Component {
       <AppBar position="static" className="rct-header">
         <Toolbar className="d-flex justify-content-between w-100">
           <ul className="list-inline mb-0 navbar-left">
-            {!this.props.horizontalMenu ? (
-              <li
-                className="list-inline-item"
-                onClick={e => this.onToggleNavCollapsed(e)}
+            <li
+              className="list-inline-item"
+              onClick={e => this.onToggleNavCollapsed(e)}
+            >
+              <IconButton
+                color="inherit"
+                mini="true"
+                aria-label="Menu"
+                className="humburger"
               >
-                <IconButton
-                  color="inherit"
-                  mini="true"
-                  aria-label="Menu"
-                  className="humburger"
-                >
-                  <MenuIcon />
-                </IconButton>
-              </li>
-            ) : (
-              <li className="list-inline-item">
-                <IconButton
-                  color="inherit"
-                  aria-label="Menu"
-                  className="humburger"
-                  component={Link}
-                  to="/"
-                >
-                  <i className="ti-layout-sidebar-left" />
-                </IconButton>
-              </li>
-            )}
+                <MenuIcon />
+              </IconButton>
+            </li>
           </ul>
           <ul className="navbar-right list-inline">
+            <Search />
             <Settings />
+            <User />
           </ul>
         </Toolbar>
       </AppBar>

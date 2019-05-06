@@ -18,7 +18,7 @@
     @include border(1px solid, rgba(0,0,0,0.2), bottom);
     align-items: center;
     display: flex;
-    background: $success;
+    background: #6f42c1 !important;
   }
   .rct-sidebar-wrap {
     .top-sidebar {

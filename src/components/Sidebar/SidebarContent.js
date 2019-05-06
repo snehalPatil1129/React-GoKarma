@@ -33,7 +33,13 @@ class SidebarContent extends Component {
     return (
       <div className="rct-sidebar-nav">
         <nav className="navigation">
-          <List className="rct-mainMenu p-0 m-0 list-unstyled">
+          <List className="rct-mainMenu p-0 m-0 list-unstyled" 
+            subheader={
+              <ListSubheader className="side-title" component="li">
+                Profile
+              </ListSubheader>
+            }
+          >
             {sidebarMenus.category1.map((menu, key) => (
               <NavMenuItem
                 menu={menu}
@@ -42,11 +48,11 @@ class SidebarContent extends Component {
               />
             ))}
           </List>
-          {/* <List
+          <List
             className="rct-mainMenu p-0 m-0 list-unstyled"
             subheader={
               <ListSubheader className="side-title" component="li">
-                Modules
+                Constituent
               </ListSubheader>
             }
           >
@@ -62,7 +68,7 @@ class SidebarContent extends Component {
             className="rct-mainMenu p-0 m-0 list-unstyled"
             subheader={
               <ListSubheader className="side-title" component="li">
-                Component
+                Donation
               </ListSubheader>
             }
           >
@@ -78,7 +84,7 @@ class SidebarContent extends Component {
             className="rct-mainMenu p-0 m-0 list-unstyled"
             subheader={
               <ListSubheader className="side-title" component="li">
-                Features
+                Campaign
               </ListSubheader>
             }
           >
@@ -90,7 +96,23 @@ class SidebarContent extends Component {
               />
             ))}
           </List>
-          <List className="rct-mainMenu p-0 m-0 list-unstyled">
+          <List
+            className="rct-mainMenu p-0 m-0 list-unstyled"
+            subheader={
+              <ListSubheader className="side-title" component="li">
+                Events
+              </ListSubheader>
+            }
+          >
+            {sidebarMenus.category5.map((menu, key) => (
+              <NavMenuItem
+                menu={menu}
+                key={key}
+                onToggleMenu={() => this.toggleMenu(menu, "category4")}
+              />
+            ))}
+          </List>
+          {/* <List className="rct-mainMenu p-0 m-0 list-unstyled">
             <ListItem
               button
               component="li"
