@@ -32,6 +32,9 @@ import {
   AsyncAboutUsComponent
 } from '../components/AsyncComponent/AsyncComponent';
 
+import {
+  signInToMicrosoftCRM
+} from "../store/actions";
 /**
  * Initial Path To Check Whether User Is Logged In Or Not
  */
@@ -60,6 +63,7 @@ class App extends Component {
     setTimeout(() => {
       self.setState({ loading: false });
     }, 1000);
+    this.props.signInToMicrosoftCRM();
   }
 
   render() {
@@ -115,4 +119,4 @@ const mapStateToProps = ({ settings, authUser }) => {
   return { settings, user };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps,{signInToMicrosoftCRM})(App);

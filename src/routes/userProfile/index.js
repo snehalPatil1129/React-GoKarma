@@ -55,13 +55,13 @@ export default class UserProfile extends Component {
                 scrollable
                 scrollButtons="off"
               >
-                <Tab icon={<i className="ti-user" />} label="myProfile" />
+                <Tab icon={<i className="ti-user" />} label="My Profile" />
                 <Tab
                   icon={<i className="ti-email" />}
-                  label="emailPrefrences"
+                  label="Email Prefrences"
                 />
-                <Tab icon={<i className="ti-comment-alt" />} label="messages" />
-                <Tab icon={<i className="ti-home" />} label="address" />
+                <Tab icon={<i className="ti-comment-alt" />} label="Messages" />
+                <Tab icon={<i className="ti-home" />} label="Address" />
               </Tabs>
             </AppBar>
             {activeTab === 0 && (

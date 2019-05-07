@@ -1,7 +1,3 @@
-/**
- * User Block
- */
-/* eslint-disable */
 import React, { Component } from 'react';
 
 class UserBlock extends Component {

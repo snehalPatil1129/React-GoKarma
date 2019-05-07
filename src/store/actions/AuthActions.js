@@ -13,7 +13,8 @@ import {
   SIGNUP_USER_SUCCESS,
   SIGNUP_USER_FAILURE
 } from "../actions/types";
-
+import MicrosoftConfig from "../../constants/MicrosoftConfig";
+import axios from "axios";
 /**
  * Redux Action To Sigin User With Firebase
  */
@@ -99,4 +100,19 @@ export const signinUserWithTwitter = history => dispatch => {
   });
   history.push("/");
   console.log(result);
+};
+
+/**Redux action to Sign in Microsoft CRM  */
+export const signInToMicrosoftCRM = history => dispatch => {
+  axios
+    .post(
+      "https://login.microsoftonline.com/common/oauth2/token",
+      MicrosoftConfig
+    )
+    .then(response => {
+      console.log("response", response);
+    })
+    .catch(error => {
+      console.log("error", error);
+    });
 };
