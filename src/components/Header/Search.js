@@ -24,13 +24,17 @@ import IconButton from "material-ui/IconButton";
 import {
   logoutUserFromFirebase
 } from "../../store/actions";
+import { NotificationManager } from "react-notifications";
 
 class Search extends Component {
+  onSearch(){
+    NotificationManager.success("Message has been sent successfully!","",3000);
+  }
   render() {
     return ( <UncontrolledDropdown nav className = "list-inline-item cart-icon" >
       <DropdownToggle nav className = "p-0" >
       <IconButton aria-label = "bag" >
-      <i className = "fa fa-search" / >
+      <i className = "fa fa-search" />
       </IconButton> 
       </DropdownToggle>
       <DropdownMenu right>
@@ -57,7 +61,9 @@ class Search extends Component {
       <div >
       <Button variant = "raised"
       className = "mr-10 mb-10 btn-xs text-white primaryButton"
-      color = "warning">
+      color = "inherit"
+      onClick= {this.onSearch.bind(this)}
+      >
       Search 
       </Button>
       </div>
@@ -67,8 +73,7 @@ class Search extends Component {
     );
   }
 }
-
-// map state to props
+{/* //map state to props */}
 const mapStateToProps = ({
   settings
 }) => {

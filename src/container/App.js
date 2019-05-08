@@ -5,9 +5,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { MuiThemeProvider } from 'material-ui/styles';
 import { SpringSpinner } from 'react-epic-spinners';
-import { IntlProvider } from 'react-intl';
 import { Redirect, Route } from 'react-router-dom';
 import $ from 'jquery';
+import { NotificationContainer } from 'react-notifications';
+
 // app routes
 import MainApp from '../routes';
 
@@ -97,6 +98,7 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         
           <React.Fragment>
+          <NotificationContainer /> 
             <InitialPath path={`${this.props.match.url}app`} authUser={this.props.user} component={MainApp} />
             <Route path="/signin" component={AppSignIn} />
             <Route path="/signup" component={AppSignUp} />

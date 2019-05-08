@@ -104,10 +104,17 @@ export const signinUserWithTwitter = history => dispatch => {
 
 /**Redux action to Sign in Microsoft CRM  */
 export const signInToMicrosoftCRM = history => dispatch => {
+  var headers = {
+    "Access-Control-Allow-Origin": "*",
+    "OData-MaxVersion": "4.0",
+    "OData-Version": "4.0",
+    "Prefer" : "odata.include annotations=\"*\"" 
+  };
   axios
     .post(
       "https://login.microsoftonline.com/common/oauth2/token",
-      MicrosoftConfig
+      MicrosoftConfig,
+      { headers: headers }
     )
     .then(response => {
       console.log("response", response);
@@ -115,4 +122,20 @@ export const signInToMicrosoftCRM = history => dispatch => {
     .catch(error => {
       console.log("error", error);
     });
+
+  // axios
+  //   .post(
+  //     "https://login.microsoftonline.com/common/oauth2/token",{
+  //       header: {
+  //         "Access-Control-Allow-Origin": "*"
+  //       }
+  //     },
+  //     MicrosoftConfig,
+  //   )
+  //   .then(response => {
+  //     console.log("response", response);
+  //   })
+  //   .catch(error => {
+  //     console.log("error", error);
+  //   });
 };

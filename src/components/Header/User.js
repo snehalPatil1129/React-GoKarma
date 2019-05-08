@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import {NotificationManager} from "react-notifications"
 import { Scrollbars } from "react-custom-scrollbars";
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 import Button from "material-ui/Button";
@@ -12,6 +12,7 @@ import { logoutUserFromFirebase } from "../../store/actions";
 class User extends Component {
   onLogout = () => {
     this.props.logoutUserFromFirebase();
+    //NotificationManager.info("User logged out successfully");
   };
 
   render() {
