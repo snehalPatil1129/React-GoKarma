@@ -13,8 +13,13 @@ import {
   SIGNUP_USER_SUCCESS,
   SIGNUP_USER_FAILURE
 } from "../actions/types";
-import MicrosoftConfig from "../../constants/MicrosoftConfig";
+//import MicrosoftConfig from "../../constants/MicrosoftConfig";
 import axios from "axios";
+// import { authContext, getToken } from "../../constants/MicrosoftConfig";
+import { getToken } from "../../constants/MicrosoftConfig";
+
+//let user = authContext.getCachedUser();
+
 /**
  * Redux Action To Sigin User With Firebase
  */
@@ -104,38 +109,44 @@ export const signinUserWithTwitter = history => dispatch => {
 
 /**Redux action to Sign in Microsoft CRM  */
 export const signInToMicrosoftCRM = history => dispatch => {
-  var headers = {
-    "Access-Control-Allow-Origin": "*",
-    "OData-MaxVersion": "4.0",
-    "OData-Version": "4.0",
-    "Prefer" : "odata.include annotations=\"*\"" 
-  };
-  axios
-    .post(
-      "https://login.microsoftonline.com/common/oauth2/token",
-      MicrosoftConfig,
-      { headers: headers }
-    )
-    .then(response => {
-      console.log("response", response);
-    })
-    .catch(error => {
-      console.log("error", error);
-    });
+  /***----------------REACT ADAL----------------- */
+ // authContext.logOut();
+ getToken();
+  console.log("responseToken", localStorage.getItem('token'));
+  //     userToken = localStorage.getItem('token');
+  //     //dispatch(setLoginSuccess(userName, userToken));
+  //     var organizationURI = "https://gokarmaphase3.crm8.dynamics.com";
 
-  // axios
-  //   .post(
-  //     "https://login.microsoftonline.com/common/oauth2/token",{
-  //       header: {
-  //         "Access-Control-Allow-Origin": "*"
-  //       }
-  //     },
-  //     MicrosoftConfig,
-  //   )
-  //   .then(response => {
-  //     console.log("response", response);
-  //   })
-  //   .catch(error => {
-  //     console.log("error", error);
-  //   });
+  //     var headers = {
+  //       Authorization: "Bearer " + userToken,
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json; charset=utf-8",
+  //       "OData-MaxVersion": "4.0",
+  //       "OData-Version": "4.0"
+  //     };
+  //     axios
+  //       .get(organizationURI + "/api/data/v9.0/accounts", { headers: headers })
+  //       .then(response => {
+  //         console.log("account response", response);
+  //       })
+  //       .catch(err => {
+  //         console.log("account err", err);
+  //       });
+ 
+  // let result;
+  // let headers = new Headers();
+  // headers.append('Content-Type', 'application/json');
+  // const options = {
+  //     method: 'GET',
+  //     headers
+  // };
+
+  // adalApiFetch(fetch, 'https://gokarmaphase3.crm8.dynamics.com/api/data/v9.1/leads', options)
+  // .then(response =>{
+  //   console.log(response);
+  //     let leads = JSON.stringify(response);
+  //     console.log(leads);
+  // })
+  // .catch(error => console.error('SERVER ERROR:', error));
+
 };

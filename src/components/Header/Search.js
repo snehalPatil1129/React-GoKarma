@@ -60,8 +60,7 @@ class Search extends Component {
       <div className = "dropdown-foot d-flex justify-content-between align-items-center" >
       <div >
       <Button variant = "raised"
-      className = "mr-10 mb-10 btn-xs text-white primaryButton"
-      color = "inherit"
+      className = "mr-10 mb-10 btn-xs text-white btn-success"
       onClick= {this.onSearch.bind(this)}
       >
       Search 

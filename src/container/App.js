@@ -36,6 +36,7 @@ import {
 import {
   signInToMicrosoftCRM
 } from "../store/actions";
+import {login, logout} from "../constants/MicrosoftConfig"
 /**
  * Initial Path To Check Whether User Is Logged In Or Not
  */
@@ -65,6 +66,9 @@ class App extends Component {
       self.setState({ loading: false });
     }, 1000);
     this.props.signInToMicrosoftCRM();
+
+    //setTimeout(() => { logout()}, 3000);
+     //setTimeout(() => {login()}, 6000);
   }
 
   render() {
