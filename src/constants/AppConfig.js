@@ -2,7 +2,7 @@
  * App Config File
  */
 const AppConfig = {
-  appLogo: require("../assets/img/enterLogo.png"), // App Logo
+  appLogo: require("../assets/img/site-logo.png"), // App Logo
   appUrl: "https://www.eternussolutions.com/", // App Url
   brandName: "Eternus Solutions", // Brand Name
   navCollapsed: false, // Sidebar collapse

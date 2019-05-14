@@ -109,44 +109,12 @@ export const signinUserWithTwitter = history => dispatch => {
 
 /**Redux action to Sign in Microsoft CRM  */
 export const signInToMicrosoftCRM = history => dispatch => {
-  /***----------------REACT ADAL----------------- */
- // authContext.logOut();
- getToken();
-  console.log("responseToken", localStorage.getItem('token'));
-  //     userToken = localStorage.getItem('token');
-  //     //dispatch(setLoginSuccess(userName, userToken));
-  //     var organizationURI = "https://gokarmaphase3.crm8.dynamics.com";
-
-  //     var headers = {
-  //       Authorization: "Bearer " + userToken,
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json; charset=utf-8",
-  //       "OData-MaxVersion": "4.0",
-  //       "OData-Version": "4.0"
-  //     };
-  //     axios
-  //       .get(organizationURI + "/api/data/v9.0/accounts", { headers: headers })
-  //       .then(response => {
-  //         console.log("account response", response);
-  //       })
-  //       .catch(err => {
-  //         console.log("account err", err);
-  //       });
- 
-  // let result;
-  // let headers = new Headers();
-  // headers.append('Content-Type', 'application/json');
-  // const options = {
-  //     method: 'GET',
-  //     headers
-  // };
-
-  // adalApiFetch(fetch, 'https://gokarmaphase3.crm8.dynamics.com/api/data/v9.1/leads', options)
-  // .then(response =>{
-  //   console.log(response);
-  //     let leads = JSON.stringify(response);
-  //     console.log(leads);
-  // })
-  // .catch(error => console.error('SERVER ERROR:', error));
-
+ let tokenObj = {
+   token : ""
+ };
+ axios.post("http://192.168.100.224:5000/leads", tokenObj).then((response) => {
+   console.log(response.data.value);
+ }).catch((error) => {
+  console.log(error);
+ })
 };

@@ -60,7 +60,7 @@ class SignupFirebase extends Component {
                         src={AppConfig.appLogo}
                         alt="session-logo"
                         width="110"
-                        height="35"
+                        height="50"
                       />
                     </Link>
                   </div>

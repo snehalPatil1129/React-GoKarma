@@ -69,16 +69,13 @@ class Sidebar extends Component {
           }}
         >
           <div className="site-logo">
-            {/* <Link to="/" className="logo-mini">
-							<img src={require('../../assets/img/enterLogo.png')} className="mr-15" alt="site logo" width="35" height="35" />
-						</Link> */}
             <Link to="/" className="logo-normal">
               <img
-                src={require("../../assets/img/enterLogo.png")}
+                src={require("../../assets/img/goKarmaLogo.png")}
                 className="img-fluid"
                 alt="site-logo"
-                width="165"
-                height="100"
+                width="120"
+                height="50"
               />
             </Link>
           </div>
